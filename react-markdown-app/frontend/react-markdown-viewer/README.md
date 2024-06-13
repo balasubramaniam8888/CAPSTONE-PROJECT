@@ -15,7 +15,7 @@ passWord:bala8888
 # BOOTSTRAP ADDED For CSS STYLING
 https://getbootstrap.com/
 
-#NODE JS FOR BACKEND 
+# NODE JS FOR BACKEND
 installing dependencies for creating backend server 
 
-#MONGOOSE AND MONGODB USED AS AN DATABASE
+#MONGODB USED AS AN DATABASE
