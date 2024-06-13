@@ -10,7 +10,7 @@ const Documents = () => {
     const fetchDocuments = async () => {
       const token = localStorage.getItem('token');
       try {
-        const response = await axios.get('http://localhost:3000/api/documents', {
+        const response = await axios.get('https://capstone-project-yjpg.onrender.com/api/documents', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setDocuments(response.data);
@@ -25,9 +25,9 @@ const Documents = () => {
   const handleDelete = async (id) => {
     const token = localStorage.getItem('token');
     try {
-      await axios.delete(`http://localhost:3000/api/documents/${id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      // await axios.delete(`https://capstone-project-yjpg.onrender.com/api/documents/${id}`, {
+      //   headers: { Authorization: `Bearer ${token}` },
+      // });
       setDocuments(documents.filter(doc => doc._id !== id));
     } catch (err) {
       console.error('Error deleting document:', err.response ? err.response.data : err.message);

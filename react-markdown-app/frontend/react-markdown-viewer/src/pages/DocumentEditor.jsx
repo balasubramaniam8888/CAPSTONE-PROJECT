@@ -15,7 +15,7 @@ const DocumentEditor = () => {
       const fetchDocument = async () => {
         const token = localStorage.getItem('token');
         try {
-          const response = await axios.get(`http://localhost:3000/api/documents/${id}`, {
+          const response = await axios.get(`https://capstone-project-yjpg.onrender.com/api/documents/${id}`, {
             headers: { Authorization: `Bearer ${token}` },
           });
           setTitle(response.data.title);
@@ -35,13 +35,13 @@ const DocumentEditor = () => {
     try {
       if (id) {
         await axios.put(
-          `http://localhost:3000/api/documents/${id}`,
+          `https://capstone-project-yjpg.onrender.com/api/documents/${id}`,
           { title, content },
           { headers: { Authorization: `Bearer ${token}` } }
         );
       } else {
         await axios.post(
-          'http://localhost:3000/api/documents',
+          'https://capstone-project-yjpg.onrender.com/api/documents',
           { title, content },
           { headers: { Authorization: `Bearer ${token}` } }
         );
