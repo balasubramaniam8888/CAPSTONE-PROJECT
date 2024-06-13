@@ -20,3 +20,9 @@ installing dependencies for creating backend server
 
 # MONGODB USED AS AN DATABASE
 connected it with using mongodb altas.
+
+# FRONTEND DEPLOYED LINK:
+https://capstone-project-five-sand.vercel.app/
+
+# BACKEND DEPLOYED LINK:
+https://capstone-project-yjpg.onrender.com
