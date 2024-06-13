@@ -18,4 +18,5 @@ https://getbootstrap.com/
 # NODE JS FOR BACKEND
 installing dependencies for creating backend server 
 
-#MONGODB USED AS AN DATABASE
+# MONGODB USED AS AN DATABASE
+connected it with using mongodb altas.
