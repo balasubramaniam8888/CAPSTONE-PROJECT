@@ -12,4 +12,4 @@ Currently, two official plugins are available:
 USERNAME:bala@8888 <br>
 passWord:bala8888
 
-# BOOTSRAP ADDED 
+# BOOTStTRAP ADDED 
