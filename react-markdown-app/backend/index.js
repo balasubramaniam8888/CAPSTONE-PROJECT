@@ -17,7 +17,7 @@ const app = express();
 
 
 const corsOptions = {
-  origin: 'https://capstone-project-yjpg.onrender.com', // Replace with your frontend domain
+  origin: '*', // Replace with your frontend domain
   optionsSuccessStatus: 200 // Some legacy browsers choke on 204
 };
 app.use(cors(corsOptions));
