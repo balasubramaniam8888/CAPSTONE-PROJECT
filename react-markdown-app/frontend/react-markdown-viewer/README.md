@@ -9,5 +9,5 @@ Currently, two official plugins are available:
 
 
 ## LOGIN credentials
-USERNAME:bala@8888
+USERNAME:bala@8888 <br>
 passWord:bala8888
