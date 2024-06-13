@@ -91,8 +91,11 @@ const DocumentEditor = () => {
           </div>
         </div>
 
-        <button type="submit" className="btn btn-dark btn-lg  w-25 align-self-end">
-        <BsFillSave2Fill />
+        <button
+          type="submit"
+          className="btn btn-dark btn-lg  w-25 align-self-end"
+        >
+          <BsFillSave2Fill />
         </button>
       </form>
     </div>

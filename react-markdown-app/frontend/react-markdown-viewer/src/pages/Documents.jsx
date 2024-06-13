@@ -94,7 +94,7 @@ const Documents = () => {
       </div>
 
       <div className="text-center">
-        <p>Please Click On The Document Link To EDIT</p>
+        <p>Please Click On The Document Link To <b>EDIT</b></p>
       </div>
     </>
   );

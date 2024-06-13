@@ -10,7 +10,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/api/auth/register", {
+      await axios.post("https://capstone-project-yjpg.onrender.com/api/auth/register", {
         username,
         password,
       });
