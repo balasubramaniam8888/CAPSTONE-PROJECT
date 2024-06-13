@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import Documents from './pages/Documents.jsx';
-import Document from './pages/Document.jsx';
 import DocumentEditor from './pages/DocumentEditor.jsx';
 
 function App() {

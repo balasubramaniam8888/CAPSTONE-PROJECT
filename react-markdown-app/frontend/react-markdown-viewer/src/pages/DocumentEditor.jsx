@@ -71,7 +71,7 @@ const DocumentEditor = () => {
           />
         </div>
         <div className="row flex-grow-1">
-          <div className="col-md-6 h-100 focus-ring-dark">
+          <div className="col-md-6 h-100">
             <textarea
               className="form-control h-100"
               placeholder="Enter Your (Markdown) Content..."
@@ -80,7 +80,7 @@ const DocumentEditor = () => {
               rows="20"
             />
           </div>
-          <div className="col-md-6 h-100 markdown-preview-container border-black">
+          <div className="col-md-6 h-100 markdown-preview-container">
             <div className="markdown-preview border p-3">
               <ReactMarkdown>{content}</ReactMarkdown>
             </div>

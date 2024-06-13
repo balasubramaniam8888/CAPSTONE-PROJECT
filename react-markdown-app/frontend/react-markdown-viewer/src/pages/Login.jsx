@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import { SiMarkdown  } from "react-icons/si";
+import { TfiAngleDoubleLeft, TfiAngleDoubleRight } from "react-icons/tfi";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -16,15 +18,20 @@ const Login = () => {
       );
       localStorage.setItem("token", response.data.token);
       navigate("/documents");
-     console.log("button is clicked");
+      console.log("button is clicked");
     } catch (err) {
       console.error(err);
     }
   };
 
   return (
-    <div className="container">
+    <div className="container border border-black">
       <h2 className="text-center display-4">Login</h2>
+      <h3 className="text-center ">
+        <TfiAngleDoubleLeft /> <SiMarkdown /> React Markdown FILE
+        Creator <TfiAngleDoubleRight />
+      </h3>
+
       <form onSubmit={handleLogin}>
         <div className="form-group mt-5">
           <input
