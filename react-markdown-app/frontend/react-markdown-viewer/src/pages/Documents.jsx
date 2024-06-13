@@ -22,12 +22,15 @@ const Documents = () => {
     fetchDocuments();
   }, []);
 
+
+
   const handleDelete = async (id) => {
     const token = localStorage.getItem('token');
     try {
       await axios.delete(`https://capstone-project-yjpg.onrender.com/api/documents/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
-      });
+      })
+     
       setDocuments(documents.filter(doc => doc._id !== id));
     } catch (err) {
       console.error('Error deleting document:', err.response ? err.response.data : err.message);
@@ -35,6 +38,25 @@ const Documents = () => {
   };
 
 
+  // const handleDelete = async (id) => {
+  //   const token = localStorage.getItem('token');
+  //   try {
+  //     const response = await fetch(`https://capstone-project-yjpg.onrender.com/api/documents/${id}`, {
+  //       method: 'DELETE',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'Authorization': `Bearer ${token}`,
+  //       },
+  //     });
+  //     if (!response.ok) {
+  //       const errorData = await response.json();
+  //       throw new Error(errorData.message || 'Failed to delete document');
+  //     }
+  //     setDocuments(documents.filter(doc => doc._id !== id));
+  //   } catch (err) {
+  //     console.error('Error deleting document:', err.message);
+  //   }
+  // }
 
 
   const handleDownload = (document) => {

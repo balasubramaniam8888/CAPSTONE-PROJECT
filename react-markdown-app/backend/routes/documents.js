@@ -70,18 +70,27 @@ router.put('/:id', auth, async (req, res) => {
 
 
 // Delete a document
+
 router.delete('/:id', auth, async (req, res) => {
   try {
+    console.log(`Attempting to delete document with ID: ${req.params.id}`);
     const document = await Document.findById(req.params.id);
     if (!document || document.userId.toString() !== req.user.userId) {
+      console.log('Document not found or user not authorized');
       return res.status(404).send('Document not found');
     }
     await document.remove();
+    console.log('Document deleted');
     res.send('Document deleted');
   } catch (err) {
-    res.status(400).send(err);
+    console.error('Error deleting document:', err);
+    res.status(400).send({ error: 'Error deleting document', details: err.message });
   }
 });
+
+
+
+
 
 module.exports = router;
 
