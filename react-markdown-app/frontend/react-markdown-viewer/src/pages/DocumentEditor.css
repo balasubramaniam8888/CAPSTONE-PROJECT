@@ -1,0 +1,12 @@
+/* DocumentEditor.css */
+
+.markdown-preview-container {
+  overflow-y: auto;
+  
+}
+
+.markdown-preview {
+  background-color: #fbfdff;
+  overflow-y: auto;
+  height: 490px;
+}

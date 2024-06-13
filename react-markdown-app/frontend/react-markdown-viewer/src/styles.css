@@ -1,0 +1,92 @@
+/* styles.css */
+
+/* Basic styling for body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container styling */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Heading styling */
+h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Form input styling */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+/* Link styling */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Markdown preview styling */
+.markdown-preview {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-y: auto;
+}
+
+/* Document list styling */
+.document-list {
+  list-style: none;
+  padding: 0;
+}
+
+.document-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.document-list li:last-child {
+  border-bottom: none;
+}
+
+/* DocumentEditor specific styles */
+.markdown-preview-container {
+  overflow-y: auto;
+}
+
+.markdown-preview {
+  background-color: #f8f9fa;
+  overflow-y: auto;
+}
