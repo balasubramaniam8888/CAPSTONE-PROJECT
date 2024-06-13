@@ -79,7 +79,7 @@ router.delete('/:id', auth, async (req, res) => {
       console.log('Document not found or user not authorized');
       return res.status(404).send('Document not found');
     }
-    await document.remove();
+    await document.deleteOne();
     console.log('Document deleted');
     res.send('Document deleted');
   } catch (err) {
