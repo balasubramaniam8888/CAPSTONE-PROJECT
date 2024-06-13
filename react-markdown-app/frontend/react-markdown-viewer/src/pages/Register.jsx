@@ -21,8 +21,8 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
-      <h2 className="text-center display-6 border border-black">Register</h2>
+    <div className="container border border-black">
+      <h2 className="text-center display-6">Register</h2>
       <form onSubmit={handleRegister}>
         <div className="form-group">
           <input
