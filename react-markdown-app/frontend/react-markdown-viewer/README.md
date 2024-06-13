@@ -8,6 +8,6 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-## LOGIN credentials
+## LOGIN credentials(TESTER LOGIN)
 USERNAME:bala@8888 <br>
 passWord:bala8888
