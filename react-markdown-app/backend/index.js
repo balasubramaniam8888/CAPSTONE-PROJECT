@@ -4,7 +4,6 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 
 
-dotenv.config();
 
 
 // Addding Required Routes
@@ -12,15 +11,13 @@ dotenv.config();
 const authRoutes = require("./routes/auth");
 const documentRoutes = require("./routes/documents");
 
+dotenv.config();
 
 const app = express();
 
 
-const corsOptions = {
-  origin: '*', // Replace with your frontend domain
-  optionsSuccessStatus: 200 // Some legacy browsers choke on 204
-};
-app.use(cors(corsOptions));
+
+app.use(cors());
 
 app.use(express.json());
 
