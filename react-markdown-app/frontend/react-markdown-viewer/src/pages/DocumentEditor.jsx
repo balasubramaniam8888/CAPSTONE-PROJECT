@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import "./DocumentEditor.css"; // Ensure this file exists for custom styling
+import { IoCreateOutline } from "react-icons/io5";
+import { BsFillSave2Fill } from "react-icons/bs";
 
 const DocumentEditor = () => {
   const { id } = useParams();
@@ -58,6 +60,8 @@ const DocumentEditor = () => {
   return (
     <div className="container-fluid h-100 d-flex flex-column">
       <h2 className="my-3 text-center display-6">
+        {" "}
+        <IoCreateOutline />
         {id ? "Edit Document" : "New Document"}
       </h2>
       <form onSubmit={handleSave} className="d-flex flex-column flex-grow-1">
@@ -87,8 +91,8 @@ const DocumentEditor = () => {
           </div>
         </div>
 
-        <button type="submit" className="btn btn-dark mt-3 w-25 align-self-end">
-          Save
+        <button type="submit" className="btn btn-dark btn-lg  w-25 align-self-end">
+        <BsFillSave2Fill />
         </button>
       </form>
     </div>

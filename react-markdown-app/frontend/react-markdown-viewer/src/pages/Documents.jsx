@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { saveAs } from "file-saver";
+import { IoDocuments } from "react-icons/io5";
+import { ImFolderDownload } from "react-icons/im";
+import { MdFolderDelete } from "react-icons/md";
 
 const Documents = () => {
   const [documents, setDocuments] = useState([]);
@@ -60,7 +63,7 @@ const Documents = () => {
   return (
     <>
       <div className="container border border-black ">
-        <h2 className="display-6">Your Documents</h2>
+        <h2><IoDocuments />   Your Documents</h2>
         <Link to="/documents/new" className="btn btn-dark mb-3">
           Create New Document
         </Link>
@@ -74,15 +77,15 @@ const Documents = () => {
               <div>
                 <button
                   onClick={() => handleDownload(doc)}
-                  className="btn btn-secondary btn-sm mx-1"
+                  className="btn btn-secondary btn-md mx-2"
                 >
-                  Download
+                 <ImFolderDownload />
                 </button>
                 <button
                   onClick={() => handleDelete(doc._id)}
-                  className="btn btn-danger btn-sm mx-1"
+                  className="btn btn-danger btn-md mx-2"
                 >
-                  Delete
+                <MdFolderDelete />
                 </button>
               </div>
             </li>
