@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
-import './DocumentEditor.css'; // Ensure this file exists for custom styling
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import "./DocumentEditor.css"; // Ensure this file exists for custom styling
 
 const DocumentEditor = () => {
   const { id } = useParams();
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
     if (id) {
       const fetchDocument = async () => {
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem("token");
         try {
-          const response = await axios.get(`https://capstone-project-yjpg.onrender.com/api/documents/${id}`, {
-            headers: { Authorization: `Bearer ${token}` },
-          });
+          const response = await axios.get(
+            `https://capstone-project-yjpg.onrender.com/api/documents/${id}`,
+            {
+              headers: { Authorization: `Bearer ${token}` },
+            }
+          );
           setTitle(response.data.title);
           setContent(response.data.content);
         } catch (err) {
@@ -31,7 +34,7 @@ const DocumentEditor = () => {
 
   const handleSave = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     try {
       if (id) {
         await axios.put(
@@ -41,12 +44,12 @@ const DocumentEditor = () => {
         );
       } else {
         await axios.post(
-          'https://capstone-project-yjpg.onrender.com/api/documents',
+          "https://capstone-project-yjpg.onrender.com/api/documents",
           { title, content },
           { headers: { Authorization: `Bearer ${token}` } }
         );
       }
-      navigate('/documents');
+      navigate("/documents");
     } catch (err) {
       console.error(err);
     }
@@ -54,7 +57,9 @@ const DocumentEditor = () => {
 
   return (
     <div className="container-fluid h-100 d-flex flex-column">
-      <h2 className="my-3 text-center display-6">{id ? 'Edit Document' : 'New Document'}</h2>
+      <h2 className="my-3 text-center display-6">
+        {id ? "Edit Document" : "New Document"}
+      </h2>
       <form onSubmit={handleSave} className="d-flex flex-column flex-grow-1">
         <div className="form-group mb-3 col">
           <input
@@ -73,7 +78,6 @@ const DocumentEditor = () => {
               value={content}
               onChange={(e) => setContent(e.target.value)}
               rows="20"
-              
             />
           </div>
           <div className="col-md-6 h-100 markdown-preview-container border-black">
@@ -82,10 +86,10 @@ const DocumentEditor = () => {
             </div>
           </div>
         </div>
-        
-        <button type="submit" className="btn btn-dark mt-3 w-25 align-self-end">Save</button>
-        
-        
+
+        <button type="submit" className="btn btn-dark mt-3 w-25 align-self-end">
+          Save
+        </button>
       </form>
     </div>
   );

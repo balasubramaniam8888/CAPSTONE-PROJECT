@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/api/auth/register', { username, password });
-      navigate('/login');
+      await axios.post("http://localhost:3000/api/auth/register", {
+        username,
+        password,
+      });
+      navigate("/login");
     } catch (err) {
       console.error(err);
     }
@@ -19,7 +22,7 @@ const Register = () => {
 
   return (
     <div className="container">
-      <h2 className='text-center'>Register</h2>
+      <h2 className="text-center">Register</h2>
       <form onSubmit={handleRegister}>
         <div className="form-group">
           <input
@@ -28,6 +31,7 @@ const Register = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             className="form-control"
+            required
           />
         </div>
         <div className="form-group">
@@ -37,12 +41,14 @@ const Register = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="form-control"
+            required
           />
         </div>
-        <div className='text-center mt-5'>
-        <button type="submit" className=" btn btn-dark">Register</button>
+        <div className="text-center mt-5">
+          <button type="submit" className=" btn btn-dark">
+            Register
+          </button>
         </div>
-       
       </form>
     </div>
   );

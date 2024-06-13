@@ -3,15 +3,25 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
 
+
+dotenv.config();
+
+
 // Addding Required Routes
 
 const authRoutes = require("./routes/auth");
 const documentRoutes = require("./routes/documents");
 
-dotenv.config();
 
 const app = express();
-app.use(cors());
+
+
+const corsOptions = {
+  origin: 'https://capstone-project-yjpg.onrender.com', // Replace with your frontend domain
+  optionsSuccessStatus: 200 // Some legacy browsers choke on 204
+};
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);

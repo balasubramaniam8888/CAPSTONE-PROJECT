@@ -25,14 +25,17 @@ const Documents = () => {
   const handleDelete = async (id) => {
     const token = localStorage.getItem('token');
     try {
-      // await axios.delete(`https://capstone-project-yjpg.onrender.com/api/documents/${id}`, {
-      //   headers: { Authorization: `Bearer ${token}` },
-      // });
+      await axios.delete(`https://capstone-project-yjpg.onrender.com/api/documents/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       setDocuments(documents.filter(doc => doc._id !== id));
     } catch (err) {
       console.error('Error deleting document:', err.response ? err.response.data : err.message);
     }
   };
+
+
+
 
   const handleDownload = (document) => {
     const blob = new Blob([document.content], { type: 'text/markdown' });
